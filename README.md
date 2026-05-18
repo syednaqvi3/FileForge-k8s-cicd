@@ -22,12 +22,12 @@ kubectl apply -f .
 
 2. Open the app
 open http://server-ip
-```
+
 3. Change Ip address 
 /FileForge-k8s-cicd/nginx/default.conf (line no 3)
 /FileForge-k8s-cicd/backend/server.js (line no 42)
-```
-4. Service Names
+
+5. Service Names
 Keep service Name same as written 
 (frontend , backend, mongo, nginx)
 ```
