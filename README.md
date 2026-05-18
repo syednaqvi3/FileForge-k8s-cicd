@@ -17,28 +17,27 @@ Production-grade file processing system built with **React + Vite**, **Node.js/E
 ## Quick Start
 
 ```bash
-# 1. Start all services
-docker-compose up -d --build
+# 1. Apply all yml files
+kubectl apply -f .
 
 # 2. Open the app
 open http://server-ip
 ```
 # 3. Change Ip address 
-/fileforge-docker-aws/nginx/default.conf (line no 17)
-/fileforge-docker-aws/backend/server.js (line no 42)
+/FileForge-k8s-cicd/nginx/default.conf (line no 3)
+/FileForge-k8s-cicd/backend/server.js (line no 42)
 
-# 4. Container Names
-Keep contaienrs Name same as written in docker compose 
-(frontend , backend, mongo, nginx-proxy)
+# 4. Service Names
+Keep service Name same as written 
+(frontend , backend, mongo, nginx)
 
 ## Project Structure
 
 ```
-fileforge/
-├── docker-compose.yml
+FileForge-k8s-cicd/
 ├── mongo-init.js
 ├── nginx/
-│   └── nginx.conf
+│   └── Default.conf
 ├── frontend/                  ← Vite + React
 │   ├── vite.config.js
 │   ├── index.html
@@ -54,16 +53,34 @@ fileforge/
 │           ├── FileGrid.jsx
 │           ├── FilterBar.jsx
 │           └── StatsPanel.jsx
-└── backend/                   ← Express API
-    ├── server.js
-    ├── Dockerfile
-    ├── .env.example
-    ├── config/database.js
-    ├── models/File.js
-    ├── middleware/upload.js
-    ├── controllers/fileController.js
-    └── routes/files.js
-```
+├── backend/                   ← Express API
+|   ├── server.js
+|   ├── Dockerfile
+|   ├── .env.example
+|   ├── config/database.js
+|   ├── models/File.js
+|   ├── middleware/upload.js
+|   ├── controllers/fileController.js
+|   └── routes/files.js
+└── k8s/                   ← Kubernetes
+|   ├── frontend/
+|       ├── frontend-deployment.yml
+|       └── frontend-service.yml
+|   ├── backend/
+|       ├── backend-deployment.yml
+|       └── backend-service.yml
+|   ├── db/
+|       ├── mongo-deployment.yml
+|       └── mongo-service.yml
+|   ├── storage/
+|       ├── pv.yml
+|       └── pvc.yml
+|   ├── nginx/
+|       ├── nginx-deployment.yml
+|       └── nginx-service.yml
+|   └── frontend/
+|       └── secrets.yml
+ ```
 
 ## API Reference
 
