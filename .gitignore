@@ -1,0 +1,7 @@
+secrets.yml
+node_modules/
+dist/
+.env
+uploads/
+*.log
+.DS_Store

@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fileforge-backend
+  labels:
+    app: backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: backend
+  template:
+    metadata:
+      labels:
+        app: backend
+    spec:
+      containers:
+        - name: backend
+          image: syednaqvi3/fileforge:backend-v1
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 5000
+
+          envFrom:
+            - secretRef:
+                name: app-secrets
