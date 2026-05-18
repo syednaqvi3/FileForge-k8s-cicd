@@ -17,17 +17,17 @@ Production-grade file processing system built with **React + Vite**, **Node.js/E
 ## Quick Start
 
 ```bash
-**# 1. Apply all yml files**
+1. Apply all yml files
 kubectl apply -f .
 
-**# 2. Open the app**
+2. Open the app
 open http://server-ip
 ```
-# 3. Change Ip address 
+3. Change Ip address 
 /FileForge-k8s-cicd/nginx/default.conf (line no 3)
 /FileForge-k8s-cicd/backend/server.js (line no 42)
 
-# 4. Service Names
+4. Service Names
 Keep service Name same as written 
 (frontend , backend, mongo, nginx)
 
