@@ -17,10 +17,10 @@ Production-grade file processing system built with **React + Vite**, **Node.js/E
 ## Quick Start
 
 ```bash
-# 1. Apply all yml files
+**# 1. Apply all yml files**
 kubectl apply -f .
 
-# 2. Open the app
+**# 2. Open the app**
 open http://server-ip
 ```
 # 3. Change Ip address 
