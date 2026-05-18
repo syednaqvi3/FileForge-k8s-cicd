@@ -39,7 +39,7 @@ const uploadLimiter = rateLimit({
 app.use(limiter);
 
 // CORS
-const allowedOrigins = (process.env.ALLOWED_ORIGINS || 'http://16.171.181.201:3000').split(',');
+const allowedOrigins = (process.env.ALLOWED_ORIGINS || 'http://13.48.203.211:3000').split(',');
 app.use(cors({
   origin: (origin, callback) => {
     if (!origin || allowedOrigins.some(o => origin.startsWith(o))) return callback(null, true);
